@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="person" class="experiment001.PersonImpl" init-method="init" destroy-method="destroy">
+    <property name="name" value="smith"/>
+    <property name="phone" ref="phone"/>
+    <property name="type" value="guest"/>
+</bean>
+    <bean id="phone" class="experiment001.PhoneImpl" init-method="init" destroy-method="destroy">
+        <property name="phoneType" value="iphone13pro max 1TB 远峰蓝"/>
+    </bean>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>i18n</value>
+            </list>
+        </property>
+    </bean>
+</beans>
